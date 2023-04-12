@@ -4,6 +4,7 @@
         <li><h3>{{$user->name}}</h3></li>
         <li><h3>{{$user->email}}</h3></li>
     </ul>
+    @if(Auth::user()->hasRole('Admin'))
     
     <div>
         <a class="btn btn-success" href="{{route('users.edit',$user)}}">Editar usuario</a>
@@ -13,4 +14,5 @@
             <button type="submit" class="btn btn-danger">borrar usuario</button>
         </form>
     </div>
+    @endif
 @endsection
